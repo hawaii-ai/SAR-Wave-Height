@@ -1,5 +1,5 @@
+# Define utility functions for preprocessing SAR data.
 import numpy as np
-
 
 def _conv_timeofday(in_t):
     """Converts data acquisition time
@@ -24,12 +24,11 @@ def _conv_deg(in_angle, is_inverse=False, in_cos=None, in_sin=None):
     
     angle = np.deg2rad(in_angle)
     return (np.cos(angle), np.sin(angle))
-    
 
 def conv_real(x):
     """Scales real part of spectrum.
     Args:
-        real: numpy array of shape (examples, 72, 60)
+        real: numpy array of shape (notebooks, 72, 60)
     Returns:
         scaled
     """
@@ -41,7 +40,7 @@ def conv_real(x):
 def conv_imaginary(x):
     """Scales imaginary part of spectrum.
     Args:
-        real: numpy array of shape (examples, 72, 60)
+        real: numpy array of shape (notebooks, 72, 60)
     Returns:
         scaled
     """
@@ -55,7 +54,7 @@ def median_fill(x, extremum=1e+15):
     """
     Inplace median fill.
     Args:
-    x: numpy array of shape (examples, features)
+    x: numpy array of shape (notebooks, features)
     extremum: threshold for abs value of x. Damn Netcdf fills in nan values with 9.96921e+36.
     Returns:
     rval: new array with extreme values filled with median.
@@ -75,7 +74,7 @@ def conv_cwave(x):
     from sklearn import preprocessing
     with h5py.File('aggregate_ALT.h5', 'r') as fs:
         cwave = np.hstack([fs['S'][:], fs['sigma0'][:].reshape(-1,1), fs['normalizedVariance'][:].reshape(-1,1)])
-        cwave = preprocess.median_fill(cwave) # Needed to remove netcdf nan-filling.
+        cwave = scripts.median_fill(cwave) # Needed to remove netcdf nan-filling.
         s_scaler = preprocessing.StandardScaler()
         s_scaler.fit(cwave) # Need to fit to full data.
         print(s_scaler.mean_, s_scaler.v)

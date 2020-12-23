@@ -25,7 +25,7 @@ class SARGenerator(Sequence):
         self.h5file.close()
         
     def _num_examples(self):
-        """Number of examples in file."""
+        """Number of notebooks in file."""
         return self.data['spectrum'].shape[0]
         
     
@@ -108,7 +108,7 @@ class SARGenerator2(Sequence):
         self.h5file.close()
         
     def _num_examples_group(self, group):
-        """Number of examples in file."""
+        """Number of notebooks in file."""
         return self.h5file[group]['spectrum'].shape[0]
     
     def _calc_batches_per_group(self):

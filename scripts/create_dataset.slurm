@@ -31,7 +31,7 @@
 #./hello ${SLURM_ARRAY_TASK_ID}
 source ~/profiles/auto.profile
 
-jupyter nbconvert create_dataset.ipynb --to python
+jupyter nbconvert create_dataset.ipynb --to python --output create_dataset.py
 
 # It's useful to debug in ipynb, then run train script.
 # But the ipynb needs to be able to run as a script.
