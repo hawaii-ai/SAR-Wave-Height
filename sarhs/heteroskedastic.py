@@ -27,7 +27,7 @@ def Gaussian_NLL(y_true, y_pred, k=1, stability_factor=1e-24):
                                                                                                          
 def Gaussian_MSE(y_true, y_pred, k=1):
     """                                         
-    Compute Negative Log Likilihood for Gaussian Output Layer.                                           
+    Compute Mean Squared Error for Gaussian Output Layer.                                           
                                                                                                          
     Args:                                                                                                
         y: Nxk matrix of (data) target values.                                                           

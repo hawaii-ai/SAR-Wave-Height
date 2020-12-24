@@ -1,7 +1,10 @@
 # SAR-Wave-Height
 
-Neural network models used to predict significant wave height from synthetic aperture radar (SAR) in [*Deep Learning for Predicting Significant Wave Height From Synthetic Aperture Radar*](https://ieeexplore.ieee.org/document/9143500) by Quach, et. al. 2020.
+Predicting significant wave height from synthetic aperture radar (SAR) using the method described in Quach, et. al. 2020, [*Deep Learning for Predicting Significant Wave Height From Synthetic Aperture Radar*](https://ieeexplore.ieee.org/document/9143500). Also available [*here*](https://authors.library.caltech.edu/104562/1/09143500.pdf)
 
-- sarhs/ contains preprocessing code for .nc files and data Keras data generators.
-- examples/ contains Jupyter notebooks for training models.
+Quikstart:
+**scripts/create_dataset_from_nc.ipynb** shows how to process a netcdf5 file into a dataset for training or making predictions.
+**notebooks/train_model_heteroskedastic.ipynb** will train a model with uncertainty predictions (heteroskedastic regression).
+**notebooks/predict.ipynb** demonstrates how to load the model and make predictions on new data.
+
 
