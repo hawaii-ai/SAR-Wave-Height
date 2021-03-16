@@ -13,10 +13,9 @@ Predicting significant wave height from synthetic aperture radar (SAR) using the
   author={B. {Quach} and Y. {Glaser} and J. E. {Stopa} and A. A. {Mouche} and P. {Sadowski}},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={Deep Learning for Predicting Significant Wave Height From Synthetic Aperture Radar}, 
-  year={2020},
-  volume={},
-  number={},
-  pages={1-9},
-  doi={10.1109/TGRS.2020.3003839}
-}
+  year={2021},
+  volume={59},
+  number={3},
+  pages={1859-1867},
+  doi={10.1109/TGRS.2020.3003839}}
 ```
